@@ -3,38 +3,36 @@
 
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>13-Week Cash View — Owner Worksheet</title>
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Inter:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <!-- SheetJS for Excel export -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
-  :root {
-    --ink: #1a1a1a;
-    --ink-soft: #4a4a4a;
-    --ink-muted: #8a8a8a;
-    --paper: #fbfaf6;
-    --paper-2: #f3f1e8;
-    --rule: #d9d4c3;
-    --rule-soft: #e8e4d6;
-    --accent: #b5461f;       /* burnt sienna */
-    --accent-soft: #f1d6c8;
-    --green: #3d6b2f;
-    --green-soft: #d8e5cf;
-    --warn-bg: #fde8dc;
-    --warn-ink: #8c2e0c;
-    --focus: #ffe9a8;
+  :root{
+    --ink:#10131a;
+    --ink-soft:#59616e;
+    --ink-muted:#59616e;
+    --paper:#fbfaf6;
+    --paper-2:#e9ecf5;
+    --rule:#d5d9e4;
+    --rule-soft:#d5d9e4;
+    --accent:#2747f5;       /* burnt sienna */
+    --accent-soft:#93abff;
+    --green:#0d6b4c;
+    --green-soft:#e2f5ea;
+    --warn-bg:#fff3cd;
+    --warn-ink:#7d5300;
+    --focus:#fff3cd;
   }
 
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
   body {
-    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
     color: var(--ink);
     background: var(--paper);
     background-image:
-      radial-gradient(circle at 15% 10%, rgba(181,70,31,0.04) 0, transparent 40%),
-      radial-gradient(circle at 85% 90%, rgba(61,107,47,0.04) 0, transparent 40%);
+      rgba(39,71,245,0.04),
+      rgba(13,107,76,0.04);
     min-height: 100vh;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -57,7 +55,7 @@
     margin-bottom: 36px;
   }
   .eyebrow {
-    font-family: "JetBrains Mono", monospace;
+    font-family: 'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
     font-size: 11px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
@@ -66,13 +64,10 @@
     font-weight: 500;
   }
   h1 {
-    font-family: "Fraunces", serif;
-    font-weight: 600;
+    font-family: 'Bricolage Grotesque','Arial Narrow',system-ui,sans-serif;font-weight:800;
     font-size: 52px;
     line-height: 1;
-    margin: 0 0 12px;
-    letter-spacing: -0.02em;
-  }
+    margin: 0 0 12px;letter-spacing:-.03em;font-style:normal;}
   h1 em {
     font-style: italic;
     font-weight: 400;
@@ -86,7 +81,7 @@
   }
   .meta {
     text-align: right;
-    font-family: "JetBrains Mono", monospace;
+    font-family: 'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
     font-size: 11px;
     color: var(--ink-muted);
     letter-spacing: 0.05em;
@@ -112,7 +107,7 @@
   }
   .setup-field:last-child { border-right: none; }
   .setup-field label {
-    font-family: "JetBrains Mono", monospace;
+    font-family: 'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
     font-size: 10px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -122,14 +117,12 @@
   .setup-field input {
     border: none;
     background: transparent;
-    font-family: "Fraunces", serif;
-    font-size: 22px;
-    font-weight: 500;
+    font-family: 'Bricolage Grotesque','Arial Narrow',system-ui,sans-serif;
+    font-size: 22px;font-weight:800;
     color: var(--ink);
     padding: 0;
     outline: none;
-    width: 100%;
-  }
+    width: 100%;letter-spacing:-.03em;font-style:normal;}
   .setup-field input:focus { background: var(--focus); }
 
   /* ---------- Table ---------- */
@@ -142,7 +135,7 @@
   table {
     width: 100%;
     border-collapse: collapse;
-    font-family: "JetBrains Mono", monospace;
+    font-family: 'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
     font-size: 12px;
     min-width: 1180px;
   }
@@ -150,14 +143,14 @@
     position: sticky; top: 0;
     background: var(--ink);
     color: var(--paper);
-    font-family: "JetBrains Mono", monospace;
+    font-family: 'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
     font-weight: 500;
     font-size: 10px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     padding: 12px 8px;
     text-align: right;
-    border-right: 1px solid #333;
+    border-right: 1px solid #10131a;
     white-space: nowrap;
   }
   thead th:first-child {
@@ -168,7 +161,7 @@
   thead th.week-col { min-width: 78px; }
   thead .week-num {
     display: block;
-    font-family: "Fraunces", serif;
+    font-family: 'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 0;
@@ -194,7 +187,7 @@
   }
   tbody td:first-child {
     padding: 8px 16px;
-    font-family: "Inter Tight", sans-serif;
+    font-family: 'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
     font-size: 13px;
     font-weight: 500;
     color: var(--ink);
@@ -209,18 +202,18 @@
     height: 100%;
     padding: 8px 10px;
     text-align: right;
-    font-family: "JetBrains Mono", monospace;
+    font-family: 'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
     font-size: 12px;
     color: var(--ink);
     outline: none;
   }
   tbody td input:focus { background: var(--focus); }
-  tbody td input::placeholder { color: #c9c5b6; }
+  tbody td input::placeholder { color: #9ba3af; }
 
   /* Section headers */
   .section-row td {
     background: var(--paper-2) !important;
-    font-family: "JetBrains Mono", monospace !important;
+    font-family: 'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace!important;
     font-size: 10px !important;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -232,9 +225,8 @@
     border-bottom: 1px solid var(--rule);
   }
   .section-row .section-count {
-    font-family: "Fraunces", serif;
-    font-size: 12px;
-    font-style: italic;
+    font-family: 'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+    font-size: 12px;font-style:normal;
     color: var(--ink-muted);
     letter-spacing: 0;
     text-transform: none;
@@ -245,20 +237,20 @@
   /* Subtotal / computed rows */
   .subtotal td {
     font-weight: 600;
-    background: #f7f4e8;
+    background: #e9ecf5;
     color: var(--ink);
-    font-family: "JetBrains Mono", monospace;
+    font-family: 'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
     padding: 8px 10px;
     font-size: 12px;
   }
-  .subtotal td:first-child { background: #ece8d6; }
+  .subtotal td:first-child { background: #d5d9e4; }
   .cash-in .subtotal td { color: var(--green); }
   .cash-out .subtotal td { color: var(--accent); }
 
   .opening td, .closing td {
     background: var(--ink);
     color: var(--paper);
-    font-family: "Fraunces", serif;
+    font-family: 'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
     font-size: 14px;
     font-weight: 500;
     padding: 10px;
@@ -266,11 +258,11 @@
   .opening td:first-child, .closing td:first-child {
     background: var(--ink);
     color: var(--paper);
-    font-family: "Inter Tight", sans-serif;
+    font-family: 'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.02em;
-    border-right: 1px solid #333;
+    border-right: 1px solid #10131a;
   }
 
   .below-threshold { background: var(--warn-bg) !important; color: var(--warn-ink) !important; position: relative; }
@@ -298,13 +290,13 @@
     background: transparent;
     border: 1px dashed var(--ink-muted);
     color: var(--ink-muted);
-    font-family: "JetBrains Mono", monospace;
+    font-family: 'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
     font-size: 10px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     padding: 4px 10px;
     cursor: pointer;
-    border-radius: 2px;
+    border-radius:0;
     transition: all 0.15s;
   }
   .add-row button:hover { color: var(--accent); border-color: var(--accent); }
@@ -327,7 +319,7 @@
   td:first-child .row-label input {
     background: transparent;
     border: none;
-    font-family: "Inter Tight", sans-serif;
+    font-family: 'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
     font-size: 13px;
     font-weight: 500;
     color: var(--ink);
@@ -347,7 +339,7 @@
     align-items: center;
   }
   .btn {
-    font-family: "JetBrains Mono", monospace;
+    font-family: 'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
     font-size: 11px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -361,13 +353,12 @@
   }
   .btn:hover { background: var(--ink); color: var(--paper); }
   .btn-primary { background: var(--ink); color: var(--paper); }
-  .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
+  .btn-primary:hover { background: var(--accent);border-color:#ffffff; }
   .btn-excel { background: var(--green); border-color: var(--green); color: var(--paper); }
-  .btn-excel:hover { background: #2d5423; border-color: #2d5423; }
+  .btn-excel:hover { background: #0d6b4c; border-color: #0d6b4c; }
   .btn-ghost { border-color: var(--rule); color: var(--ink-soft); }
   .toolbar-note {
-    font-family: "Fraunces", serif;
-    font-style: italic;
+    font-family: 'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;font-style:normal;
     font-size: 13px;
     color: var(--ink-muted);
     margin-left: auto;
@@ -383,7 +374,7 @@
     border-top: 1px solid var(--rule);
   }
   .guide-card h3 {
-    font-family: "JetBrains Mono", monospace;
+    font-family: 'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
     font-size: 10px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -392,14 +383,11 @@
     font-weight: 500;
   }
   .guide-card h3 .num {
-    font-family: "Fraunces", serif;
-    font-size: 32px;
-    font-weight: 400;
-    font-style: italic;
+    font-family: 'Bricolage Grotesque','Arial Narrow',system-ui,sans-serif;
+    font-size: 32px;font-weight:800;font-style:normal;
     color: var(--ink);
     margin-right: 8px;
-    vertical-align: -6px;
-  }
+    vertical-align: -6px;letter-spacing:-.03em;line-height:1.04;}
   .guide-card p {
     font-size: 14px;
     color: var(--ink-soft);
@@ -407,8 +395,7 @@
     line-height: 1.6;
   }
   .guide-card .pull {
-    font-family: "Fraunces", serif;
-    font-style: italic;
+    font-family: 'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;font-style:normal;
     font-size: 15px;
     color: var(--ink);
     margin-top: 10px;
@@ -421,15 +408,14 @@
     margin-top: 64px;
     padding-top: 24px;
     border-top: 1px solid var(--rule);
-    font-family: "JetBrains Mono", monospace;
+    font-family: 'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
     font-size: 10px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--ink-muted);
   }
   .colophon em {
-    font-family: "Fraunces", serif;
-    font-style: italic;
+    font-family: 'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;font-style:normal;
     text-transform: none;
     letter-spacing: 0;
     color: var(--ink-soft);
@@ -474,9 +460,21 @@
     .setup-field:nth-child(1), .setup-field:nth-child(2) { border-bottom: 1px solid var(--rule); }
     .guidance { grid-template-columns: 1fr; gap: 20px; }
   }
+
+/* Two Weeks Out module band, October 2026 system */
+.two-band{display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between;align-items:center;padding:12px 24px;background:#2CCFC4;color:#10131a;border-bottom:2px solid #10131a;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.two-band .two-wm{font-family:'Bricolage Grotesque','Arial Narrow',system-ui,sans-serif;font-weight:800;font-size:17px;letter-spacing:-.03em;line-height:1;color:#10131a}
+.two-band .two-mod{font-family:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;line-height:1.3;color:#10131a}
+body{-webkit-font-smoothing:antialiased}
+@media print{.two-band{display:none !important}}
+/* shared touches, October 2026 system */
+button,select,optgroup,option{font-family:inherit}
+input[type=checkbox],input[type=radio],input[type=range]{accent-color:#2747f5}
+h1 em,h1 i{font-style:normal !important;font-weight:inherit !important;color:inherit !important;background:linear-gradient(#ff5a1f,#ff5a1f) left calc(100% - .04em)/100% .09em no-repeat;padding-bottom:.02em;-webkit-box-decoration-break:clone;box-decoration-break:clone;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 </style>
 </head>
 <body>
+<div class="two-band"><span class="two-wm">Two Weeks Out</span><span class="two-mod">03 / Master Your Cash</span></div>
 <div class="page">
 
   <header>
